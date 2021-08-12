@@ -10,7 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String name = "";
+  // String name = "";
   bool buttonChanged = false;
   final _formKey = GlobalKey<FormState>();
 
@@ -51,12 +51,12 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 45,
                           fontFamily: GoogleFonts.pacifico().fontFamily,
                         )),
-                    TextSpan(
-                        text: '$name',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontFamily: GoogleFonts.merienda().fontFamily,
-                        )),
+                    // TextSpan(
+                    //     text: '$name',
+                    //     style: TextStyle(
+                    //       fontSize: 25,
+                    //       fontFamily: GoogleFonts.merienda().fontFamily,
+                    //     )),
                   ],
                 ),
               ),
@@ -74,10 +74,10 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     TextFormField(
-                      onChanged: (value) {
-                        name = value.length == 0 ? value : ', $value';
-                        setState(() {});
-                      },
+                      // onChanged: (value) {
+                      //   name = value.length == 0 ? value : ', $value';
+                      //   setState(() {});
+                      // },
                       scrollPadding: EdgeInsets.only(bottom: 300),
                       decoration: InputDecoration(
                         labelText: "Username",
