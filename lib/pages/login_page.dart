@@ -10,7 +10,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String name = "";
   bool buttonChanged = false;
   final _formKey = GlobalKey<FormState>();
 
@@ -41,43 +40,19 @@ class _LoginPageState extends State<LoginPage> {
                 "assets/images/login.png",
               ),
               SizedBox(height: 20),
-              RichText(
-                text: TextSpan(
-                  style: TextStyle(color: Colors.black),
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'Welcome',
-                        style: TextStyle(
-                          fontSize: 45,
-                          fontFamily: GoogleFonts.pacifico().fontFamily,
-                        )),
-                    TextSpan(
-                        text: '$name',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontFamily: GoogleFonts.merienda().fontFamily,
-                        )),
-                  ],
+              Text(
+                "Welcome",
+                style: TextStyle(
+                  fontSize: 45,
+                  fontFamily: GoogleFonts.pacifico().fontFamily,
                 ),
               ),
-              // Text(
-              //   "Welcome",
-              //   style: TextStyle(
-              //     fontSize: 45,
-              //     fontFamily: GoogleFonts.pacifico().fontFamily,
-              //   ),
-              // ),
-              // Text("asdads"),
               Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 20.0, horizontal: 16.1),
                 child: Column(
                   children: [
                     TextFormField(
-                      onChanged: (value) {
-                        name = value.length == 0 ? value : ', $value';
-                        setState(() {});
-                      },
                       scrollPadding: EdgeInsets.only(bottom: 300),
                       decoration: InputDecoration(
                         labelText: "Username",
