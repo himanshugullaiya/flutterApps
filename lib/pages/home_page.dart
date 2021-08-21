@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                 // itemCount: dummyList.length,
                 // itemBuilder: (context, index) => ItemWidget(
                 //       item: dummyList[index],
-                //     )),
+                //     )),?
 
                 itemCount: CatalogModel.items.length,
                 itemBuilder: (context, index) => ItemWidget(
