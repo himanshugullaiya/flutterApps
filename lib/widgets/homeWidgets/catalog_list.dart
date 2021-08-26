@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/pages/catalog_detail_page.dart';
@@ -22,7 +23,7 @@ class CatalogList extends StatelessWidget {
                       builder: (context) =>
                           CatalogDetailPage(catalog: catalog))),
               child: CatalogItem(catalog: catalog));
-        });
+        }).pOnly(bottom: 10.0);
   }
 }
 
@@ -50,20 +51,28 @@ class CatalogItem extends StatelessWidget {
               children: [
                 // Aligns in Rows
                 "\$${catalog.price}".text.bold.lg.make(),
-                ElevatedButton(
-                        onPressed: () {
-                          print(catalog.name);
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(MyTheme.darkBlueColor),
-                          shape: MaterialStateProperty.all(
-                              // RoundedRectangleBorder(
-                              //     borderRadius: BorderRadius.circular(10))
-                              StadiumBorder()),
-                        ),
-                        child: "Buy".text.make())
-                    .px16(),
+                // ElevatedButton(
+                //         onPressed: () {
+                //           print(catalog.name);
+                //         },
+                //         style: ButtonStyle(
+                //           backgroundColor:
+                //               MaterialStateProperty.all(MyTheme.darkBlueColor),
+                //           shape: MaterialStateProperty.all(
+                //               // RoundedRectangleBorder(
+                //               //     borderRadius: BorderRadius.circular(10))
+                //               StadiumBorder()),
+                //         ),
+                //         child: "Buy".text.make())
+                //     .px16(),
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    CupertinoIcons.add_circled,
+                    size: 40,
+                    color: Colors.black,
+                  ).p16(),
+                )
               ],
             )
           ],

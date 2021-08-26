@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
@@ -38,9 +39,7 @@ class CatalogDetailPage extends StatelessWidget {
             ],
           ).p16(),
         ),
-        appBar: AppBar(
-          backgroundColor: MyTheme.creamColor,
-        ),
+        appBar: AppBar(backgroundColor: Colors.transparent),
         body: SafeArea(
           bottom: false,
           child: Column(children: [
@@ -58,11 +57,16 @@ class CatalogDetailPage extends StatelessWidget {
                   width: context.screenWidth,
                   child: Column(
                     children: [
-                      HeightBox(20),
+                      10.heightBox,
                       catalog.name.text.bold.xl4.black.make(),
-                      catalog.desc.text.xl
-                          .textStyle(context.captionStyle!)
-                          .make(),
+                      catalog.desc.text.textStyle(context.captionStyle!).make(),
+                      10.heightBox,
+                      "Vero et sit dolor magna sea lorem eirmod vero. Sit dolores sadipscing consetetur amet consetetur dolor. Erat duo sit gubergren."
+                          .text
+                          // .textStyle(context.captionStyle!)
+                          .medium
+                          .make()
+                          .p16(),
                     ],
                   ).py32(),
                 ),
