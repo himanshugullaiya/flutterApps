@@ -38,7 +38,9 @@ class CatalogDetailPage extends StatelessWidget {
             ],
           ).p16(),
         ),
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: MyTheme.creamColor,
+        ),
         body: SafeArea(
           bottom: false,
           child: Column(children: [
