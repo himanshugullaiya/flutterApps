@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-import 'package:flutter_catalog/widgets/Item_widget.dart';
 import 'package:flutter_catalog/widgets/drawer.dart';
+import 'package:flutter_catalog/widgets/homeWidgets/catalog_header.dart';
+import 'package:flutter_catalog/widgets/homeWidgets/catalog_list.dart';
+import 'package:flutter_catalog/widgets/themes.dart';
 import 'dart:convert';
+import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,27 +41,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Catalog App"),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items.isNotEmpty)
-            ? ListView.builder(
-
-                // itemCount: dummyList.length,
-                // itemBuilder: (context, index) => ItemWidget(
-                //       item: dummyList[index],
-                //     )),?
-
-                itemCount: CatalogModel.items.length,
-                itemBuilder: (context, index) => ItemWidget(
-                      item: CatalogModel.items[index],
-                    ))
-            : Center(child: CircularProgressIndicator()),
-      ),
-      drawer: MyDrawer(),
-    );
+        drawer: MyDrawer(),
+        backgroundColor: MyTheme.creamColor,
+        body: SafeArea(
+          child: Container(
+            padding: Vx.m24,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CatalogHeader(),
+                SizedBox(
+                  height: 20,
+                ),
+                (CatalogModel.items
+                        .isNotEmpty) //if condition to check whether Catalog.items is not empty
+                    ? CatalogList().expand()
+                    : CircularProgressIndicator().centered().expand(),
+              ],
+            ),
+          ),
+        ));
   }
 }
