@@ -43,7 +43,7 @@ class CatalogItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            catalog.name.text.bold.lg.black.make(),
+            catalog.name.text.bold.lg.color(context.accentColor).make(),
             catalog.desc.text.textStyle(context.captionStyle!).make(),
             ButtonBar(
               alignment: MainAxisAlignment.spaceBetween,
@@ -70,7 +70,8 @@ class CatalogItem extends StatelessWidget {
                   child: Icon(
                     CupertinoIcons.add_circled,
                     size: 40,
-                    color: Colors.black,
+                    // color: Theme.of(context).buttonColor,
+                    color: context.theme.buttonColor,
                   ).p16(),
                 )
               ],
@@ -78,6 +79,6 @@ class CatalogItem extends StatelessWidget {
           ],
         ))
       ],
-    )).white.rounded.square(150).make().py8();
+    )).color(context.cardColor).rounded.square(150).make().py8();
   }
 }

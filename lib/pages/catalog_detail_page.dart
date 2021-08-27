@@ -12,9 +12,9 @@ class CatalogDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.canvasColor,
         bottomNavigationBar: Container(
-          color: Colors.white,
+          color: context.cardColor,
           child: ButtonBar(
             alignment: MainAxisAlignment.spaceBetween,
             buttonPadding: EdgeInsets.zero,
@@ -26,15 +26,22 @@ class CatalogDetailPage extends StatelessWidget {
                         print(catalog.name);
                       },
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.darkBlueColor),
+                        backgroundColor: MaterialStateProperty.all(
+                            // context.theme.buttonTheme.buttonColor),
+                            Theme.of(context).buttonColor),
                         shape: MaterialStateProperty.all(
                             // RoundedRectangleBorder(
                             //     borderRadius: BorderRadius.circular(10))
                             StadiumBorder()),
                       ),
-                      child: "Buy".text.make())
-                  .w20(context)
+                      child: "Add to Cart"
+                          .text
+                          .color((context.theme.brightness == Brightness.light)
+                              ? Colors.white
+                              : Colors.black)
+                          .xl
+                          .make())
+                  .wh(150, 50)
                   .px16(),
             ],
           ).p16(),
@@ -53,12 +60,14 @@ class CatalogDetailPage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
                       10.heightBox,
-                      catalog.name.text.bold.xl4.black.make(),
+                      catalog.name.text.bold.xl4
+                          .color(context.accentColor)
+                          .make(),
                       catalog.desc.text.textStyle(context.captionStyle!).make(),
                       10.heightBox,
                       "Vero et sit dolor magna sea lorem eirmod vero. Sit dolores sadipscing consetetur amet consetetur dolor. Erat duo sit gubergren."

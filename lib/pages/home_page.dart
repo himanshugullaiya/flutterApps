@@ -44,15 +44,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Theme.of(context).buttonColor,
           onPressed: () {
             Navigator.pushNamed(context, MyRoutes.cartRoute);
           },
           child: Icon(CupertinoIcons.cart),
-          backgroundColor: MyTheme.darkBlueColor,
+
+          // backgroundColor : context.cardColor,
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         drawer: MyDrawer(),
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: Theme.of(context).canvasColor,
         body: SafeArea(
           child: Container(
             padding: Vx.m24,
