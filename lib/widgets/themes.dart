@@ -28,8 +28,12 @@ class MyTheme {
       appBarTheme: AppBarTheme(
         color: Colors.black,
         elevation: 0.0,
-        iconTheme: IconThemeData(color: Colors.black),
-        textTheme: Theme.of(context).textTheme,
+        iconTheme: IconThemeData(color: Colors.white),
+        //.... Not Required......
+        // textTheme: Theme.of(context)
+        //     .textTheme
+        //     .copyWith(headline6: TextStyle(color: Colors.white)),
+        //......................
       ));
 
   static Color creamColor = Color(0xfff5f5f5);
@@ -37,4 +41,5 @@ class MyTheme {
   static Color darkBlueColor = Color(0xff000075);
   static Color grayColor = Vx.gray900;
   static Color lightBlueColor = Color(0xff00C3EF);
+  // static Color lightBlueColor = Colors.red;
 }

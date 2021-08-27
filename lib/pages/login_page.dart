@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -36,8 +37,13 @@ class _LoginPageState extends State<LoginPage> {
           key: _formKey,
           child: Column(
             children: [
-              Image.asset(
-                "assets/images/login.png",
+              VxArc(
+                height: 30.0,
+                arcType: VxArcType.CONVEX,
+                edge: VxEdge.BOTTOM,
+                child: Image.asset(
+                  "assets/images/login.png",
+                ),
               ),
               SizedBox(height: 20),
               Text(

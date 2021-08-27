@@ -14,8 +14,8 @@ class CatalogList extends StatelessWidget {
             true, //we are using a list in a column so we must give whole space required
         itemCount: CatalogModel.items.length,
         itemBuilder: (context, index) {
-          final catalog = CatalogModel
-              .items[index]; //in your code u should use item isntad of catalog
+          final catalog = CatalogModel.getByPosition(
+              index); //in your code u should use item isntad of catalog
           return InkWell(
               onTap: () => Navigator.push(
                   context,
