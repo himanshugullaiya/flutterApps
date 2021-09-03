@@ -14,8 +14,8 @@ class CatalogList extends StatelessWidget {
             true, //we are using a list in a column so we must give whole space required
         itemCount: CatalogModel.items.length,
         itemBuilder: (context, index) {
-          final catalog = CatalogModel.getByPosition(
-              index); //in your code u should use item isntad of catalog
+          final catalog = CatalogModel
+              .items[index]; //in your code u should use item isntad of catalog
           return InkWell(
               onTap: () => Navigator.push(
                   context,
@@ -51,20 +51,7 @@ class CatalogItem extends StatelessWidget {
               children: [
                 // Aligns in Rows
                 "\$${catalog.price}".text.bold.lg.make(),
-                // ElevatedButton(
-                //         onPressed: () {
-                //           print(catalog.name);
-                //         },
-                //         style: ButtonStyle(
-                //           backgroundColor:
-                //               MaterialStateProperty.all(MyTheme.darkBlueColor),
-                //           shape: MaterialStateProperty.all(
-                //               // RoundedRectangleBorder(
-                //               //     borderRadius: BorderRadius.circular(10))
-                //               StadiumBorder()),
-                //         ),
-                //         child: "Buy".text.make())
-                //     .px16(),
+
                 InkWell(
                   onTap: () {},
                   child: Icon(
